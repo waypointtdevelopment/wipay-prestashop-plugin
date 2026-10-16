@@ -43,10 +43,9 @@ class WipayWaypoint extends PaymentModule
 	/**
 	 * Territory => host map.
 	 *
-	 * The TT pair is published by WiPay's Platforms and Environments page. The
-	 * remaining territories follow the documented host layout and were carried
-	 * over from the sandbox-tested WordPress gateway; re-confirm them against
-	 * https://docs.wipayfinancial.com/platforms-and-environments before release.
+	 * All five live/sandbox pairs are confirmed against WiPay's Platforms and
+	 * Environments page (checked 15 October 2026), and all ten hostnames were
+	 * verified reachable over HTTPS. This is no longer an open release item.
 	 */
 	private static $hosts = array(
 		'TT' => array( 'live' => 'tt.wipayfinancial.com', 'sandbox' => 'ttsb.wipayfinancial.com' ),

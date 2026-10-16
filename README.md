@@ -6,7 +6,7 @@ An independent PrestaShop payment module that redirects shoppers to WiPay's host
 
 **Developed, not yet sandbox-tested.** Version 1.0.0 implements the full hosted-checkout flow for PrestaShop 8.x and 9.x. The request payload, response hash, endpoint map and availability guards are covered by an automated harness (91 assertions, all passing). The end-to-end checkout has **not** been run against WiPay sandbox or a live PrestaShop store — see [TESTING.md](TESTING.md) before treating this as releasable.
 
-No legacy WiPay PrestaShop package was used. This module is a clean-room implementation written from WiPay's published Payments API documentation, which is why the license/provenance question that still blocks the Magento and OpenCart repositories does not apply here.
+No legacy WiPay PrestaShop package was used. This module is a clean-room implementation written from WiPay's published Payments API documentation, so the license/provenance question raised by the legacy Magento and OpenCart packages never applied here.
 
 ## Safety design
 
@@ -43,7 +43,7 @@ Never commit that file or disclose the key. Live mode is refused at checkout unt
 - No automated refunds, chargeback webhooks, or transaction-retrieval reconciliation.
 - Declined, cancelled and abandoned attempts remain in the awaiting order state; the merchant reconciles them against the attempt ledger and WiPay settlement.
 - Stock is reserved when the order is created at checkout start, not when payment confirms.
-- The TT/BB/JM/GY/GD host mapping is documented in `wipaywaypoint/wipaywaypoint.php`. Only the TT pair is published on WiPay's Platforms and Environments page; re-confirm the others before release.
+- The TT/BB/JM/GY/GD host mapping is documented in `wipaywaypoint/wipaywaypoint.php`. All five live/sandbox pairs were re-confirmed against WiPay's Platforms and Environments page on 15 October 2026, and all ten hostnames were probed and returned HTTP 200 over HTTPS.
 
 ## Development
 

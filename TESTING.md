@@ -99,4 +99,4 @@ To craft these, take a real success return URL from step 3.4 and edit one parame
 
 ## Sign-off
 
-Release only when every row passes and the host mapping note in [README.md](README.md) has been re-confirmed against WiPay's Platforms and Environments page.
+Release only when every row passes. The host mapping note in [README.md](README.md) was re-confirmed against WiPay's Platforms and Environments page on 15 October 2026, so it is no longer a sign-off condition.
